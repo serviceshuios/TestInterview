@@ -1,0 +1,15 @@
+body {
+    background-color: white;
+}
+
+.cursor-pointer{
+    cursor: pointer;
+  }
+.image-principale {
+    width: 400px;
+}
+
+.image-vaisseau {
+    width: 200px;
+    margin-right: auto;
+}

@@ -1,0 +1,24 @@
+<app-nav-bar></app-nav-bar>
+<div class="container">
+    <!-- <img class="star-wars-logo"
+         src="../assets/Star_Wars_Logo.png"
+         alt="Star Wars"> -->
+
+    <div *ngIf="isLoaded">
+        <div *ngIf="!shipDetails && !pilotDetails">
+            <app-ship-list (shipSelected)="shipSelected($event)"></app-ship-list>
+        </div>
+
+        <div *ngIf="!!shipDetails && !pilotDetails">
+            <app-ship-details [ship]="shipDetails"
+                              (pilotSelected)="pilotSelected($event)"
+                              (returnToShipList)="returnToShipList()"></app-ship-details>
+        </div>
+
+        <div *ngIf="!!pilotDetails">
+            <app-pilot-details [pilot]="pilotDetails"
+                               (shipSelected)="shipSelected($event)"
+                               (returnToShipDetails)="returnToShipDetails()"></app-pilot-details>
+        </div>
+    </div>
+</div>
